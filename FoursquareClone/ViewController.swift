@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ParseCore
 
 class ViewController: UIViewController {
 

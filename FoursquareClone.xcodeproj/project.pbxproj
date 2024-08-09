@@ -13,6 +13,8 @@
 		A3E7D8EA2C66BC4400F716EB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A3E7D8E92C66BC4400F716EB /* Base */; };
 		A3E7D8EC2C66BC4500F716EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E7D8EB2C66BC4500F716EB /* Assets.xcassets */; };
 		A3E7D8EF2C66BC4500F716EB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A3E7D8EE2C66BC4500F716EB /* Base */; };
+		A3E7D8F82C66BCE500F716EB /* ParseLiveQuery in Frameworks */ = {isa = PBXBuildFile; productRef = A3E7D8F72C66BCE500F716EB /* ParseLiveQuery */; };
+		A3E7D8FA2C66BCE500F716EB /* ParseObjC in Frameworks */ = {isa = PBXBuildFile; productRef = A3E7D8F92C66BCE500F716EB /* ParseObjC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3E7D8FA2C66BCE500F716EB /* ParseObjC in Frameworks */,
+				A3E7D8F82C66BCE500F716EB /* ParseLiveQuery in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,10 @@
 			dependencies = (
 			);
 			name = FoursquareClone;
+			packageProductDependencies = (
+				A3E7D8F72C66BCE500F716EB /* ParseLiveQuery */,
+				A3E7D8F92C66BCE500F716EB /* ParseObjC */,
+			);
 			productName = FoursquareClone;
 			productReference = A3E7D8DF2C66BC4400F716EB /* FoursquareClone.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = A3E7D8D62C66BC4400F716EB;
+			packageReferences = (
+				A3E7D8F62C66BCE500F716EB /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */,
+			);
 			productRefGroup = A3E7D8E02C66BC4400F716EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,6 +374,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3E7D8F62C66BCE500F716EB /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/parse-community/Parse-SDK-iOS-OSX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3E7D8F72C66BCE500F716EB /* ParseLiveQuery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3E7D8F62C66BCE500F716EB /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseLiveQuery;
+		};
+		A3E7D8F92C66BCE500F716EB /* ParseObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3E7D8F62C66BCE500F716EB /* XCRemoteSwiftPackageReference "Parse-SDK-iOS-OSX" */;
+			productName = ParseObjC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A3E7D8D72C66BC4400F716EB /* Project object */;
 }
