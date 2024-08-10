@@ -8,7 +8,7 @@
 import UIKit
 import ParseCore
 
-class ViewController: UIViewController {
+class SignUp: UIViewController {
     
     
     @IBOutlet var usernameText: UITextField!
