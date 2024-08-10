@@ -10,42 +10,57 @@ import ParseCore
 
 class ViewController: UIViewController {
     
+    
+    @IBOutlet var usernameText: UITextField!
+    @IBOutlet var passwordText: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        //        let parseObject = PFObject(className: "Fruits")
-        //        parseObject["name"] = "Banana"
-        //
-        //        parseObject["Calories"] = 150
-        //        parseObject.saveInBackground { (Success, error) in
-        //            if error != nil {
-        //                print(error?.localizedDescription)
-        //            } else{
-        //                print("uploaded")
-        //
-        //            }
-        //        }
-        //
-        //
-        
-        let query = PFQuery(className: "Fruits")
-     //   query.whereKey("name", equalTo: "Apple")
-     //   query.whereKey("calories", greaterThan: 120)
-        query.findObjectsInBackground { (objects, error) in
-            if error != nil {
-                print(error?.localizedDescription)
-            } else{
-                print(objects)
-            
-            }
-        }
+
+    
         
 
-        
-        
+    }
+    
+    
+    @IBAction func signInClicked(_ sender: Any) {
         
         
     }
+    
+    @IBAction func signUpClicked(_ sender: Any) {
+        if usernameText.text != "" && passwordText.text != ""{
+        let user = PFUser()
+            user.username = usernameText.text!
+            user.password = passwordText.text!
+            
+            user.signUpInBackground{(success, error) in
+                if error != nil{
+                    self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error!")
+                }else {
+                    // Add a Segue
+                    print("OK")
+                }
+            }
+            
+            
+        } else {
+            makeAlert(titleInput: "Error!", messageInput: "Username / Password needed!")
+        }
+        
+    }
+    
+    func makeAlert(titleInput: String, messageInput: String) {
+        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let addButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(addButton)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
 }
 
