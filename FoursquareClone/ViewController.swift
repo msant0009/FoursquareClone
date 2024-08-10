@@ -33,8 +33,7 @@ class ViewController: UIViewController {
                     self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
                 } else{
                         // Segue
-                print("Welcome")
-                    print(user?.username)
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                }
                 
            }
@@ -57,7 +56,7 @@ class ViewController: UIViewController {
                     self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error!")
                 }else {
                     // Add a Segue
-                    print("OK")
+                    self.performSegue(withIdentifier: "toPlacesVC", sender: nil)
                 }
             }
             
