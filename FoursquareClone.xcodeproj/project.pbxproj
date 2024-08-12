@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A32B43FB2C6A5FD70074744C /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32B43FA2C6A5FD70074744C /* MapVC.swift */; };
+		A32B43FD2C6A66E00074744C /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32B43FC2C6A66E00074744C /* DetailsVC.swift */; };
 		A3515D122C67FF4B009F13FD /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3515D112C67FF4B009F13FD /* PlacesVC.swift */; };
 		A3E448592C6833040009B7BF /* AddPlaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E448582C6833040009B7BF /* AddPlaceVC.swift */; };
 		A3E7D8E32C66BC4400F716EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7D8E22C66BC4400F716EB /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		A32B43FA2C6A5FD70074744C /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		A32B43FC2C6A66E00074744C /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		A3515D112C67FF4B009F13FD /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 		A3E448582C6833040009B7BF /* AddPlaceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceVC.swift; sourceTree = "<group>"; };
 		A3E7D8DF2C66BC4400F716EB /* FoursquareClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoursquareClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				A3515D112C67FF4B009F13FD /* PlacesVC.swift */,
 				A3E448582C6833040009B7BF /* AddPlaceVC.swift */,
 				A32B43FA2C6A5FD70074744C /* MapVC.swift */,
+				A32B43FC2C6A66E00074744C /* DetailsVC.swift */,
 				A3E7D8E82C66BC4400F716EB /* Main.storyboard */,
 				A3E7D8EB2C66BC4500F716EB /* Assets.xcassets */,
 				A3E7D8ED2C66BC4500F716EB /* LaunchScreen.storyboard */,
@@ -162,6 +165,7 @@
 				A32B43FB2C6A5FD70074744C /* MapVC.swift in Sources */,
 				A3E7D8E32C66BC4400F716EB /* AppDelegate.swift in Sources */,
 				A3515D122C67FF4B009F13FD /* PlacesVC.swift in Sources */,
+				A32B43FD2C6A66E00074744C /* DetailsVC.swift in Sources */,
 				A3E448592C6833040009B7BF /* AddPlaceVC.swift in Sources */,
 				A3E7D8E52C66BC4400F716EB /* SceneDelegate.swift in Sources */,
 			);
