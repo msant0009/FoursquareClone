@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import PhotosUI
 
-class AddPlaceVC: UIViewController {
+class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var placeNameText: UITextField!
    
@@ -15,13 +16,16 @@ class AddPlaceVC: UIViewController {
     
     @IBOutlet var placeAtmosphereText: UITextField!
     
-  
     @IBOutlet var placeImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        placeImageView.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
+        placeImageView.addGestureRecognizer(gestureRecognizer)
+        
+        
     }
     
 
@@ -30,5 +34,19 @@ class AddPlaceVC: UIViewController {
         self.performSegue(withIdentifier: "toMapVC", sender: nil)
         
     }
-    
+
+    @objc func chooseImage(){
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        self.present(picker, animated: true, completion: nil)
+      }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        placeImageView.image = info[.originalImage] as? UIImage
+      self.dismiss(animated: true, completion: nil)
+    }
+
 }
+    
+
