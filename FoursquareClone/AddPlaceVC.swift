@@ -6,12 +6,15 @@
 //
 
 import UIKit
-import PhotosUI
+
+//var globalName = ""
+//var globaType = ""
+//var globalAtmosphere = ""
 
 class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     @IBOutlet var placeNameText: UITextField!
-   
+    
     @IBOutlet var placeTypeText: UITextField!
     
     @IBOutlet var placeAtmosphereText: UITextField!
@@ -28,12 +31,27 @@ class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
     }
     
-
+    
     
     @IBAction func nextButtonClicked(_ sender: Any) {
-        self.performSegue(withIdentifier: "toMapVC", sender: nil)
-        
+        if placeNameText.text != "" && placeTypeText.text != "" && placeAtmosphereText.text != "" {
+            if let chosenImage = placeImageView.image{
+                let placeModel = PlaceModel.sharedInstance
+                placeModel.placeName = placeNameText.text!
+                placeModel.placeType = placeTypeText.text!
+                placeModel.placeAtmosphere = placeAtmosphereText.text!
+                placeModel.placeImage = chosenImage
+                
+            }
+            performSegue(withIdentifier: "toMapVC", sender: nil)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Place Name/Type/Atmosphere??", preferredStyle: UIAlertController.Style.alert)
+            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            alert.addAction(okButton)
+            present(alert, animated: true, completion: nil)
+            }
     }
+
 
     @objc func chooseImage(){
         let picker = UIImagePickerController()
