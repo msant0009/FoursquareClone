@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 //var globalName = ""
 //var globaType = ""
 //var globalAtmosphere = ""
@@ -62,9 +63,13 @@ class AddPlaceVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         placeImageView.image = info[.originalImage] as? UIImage
-      self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
+ 
+    
+    
+    
 }
     
 
