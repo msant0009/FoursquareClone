@@ -39,7 +39,7 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
    //     query.findObjectsInBackground { (objects, error) in
         query.findObjectsInBackground {(objects, error) in
             if error != nil{
-//                self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription??, "Error")
+                self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
             } else {
                 if objects != nil{
                     self.placeIDArray.removeAll(keepingCapacity: false)
@@ -70,7 +70,7 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @objc func logoutButtonClicked() {
         PFUser.logOutInBackground { (error) in
             if error != nil {
-      //          self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription??, "Error")
+                self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
             } else {
                 self.performSegue(withIdentifier: "toSignUpVC", sender: nil)
             }
@@ -100,12 +100,14 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return placeNameArray.count
     }
 
-    func makeAlert(titleInput: String, messageInput: String) {
-        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
-        let okbutton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-        self.present(alert, animated: true, completion: nil)
-        
-    }
+
+    func makeAlert(titleInput: String, messageInput: String){
+            let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            alert.addAction(okButton)
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
         
         
